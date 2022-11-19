@@ -32,9 +32,9 @@ export class Env {
     private discApiIdentityUrl = this.getOrLog('DISCORD_API_IDENTITY_URL', 'Discord oauth2 will be unavailable.');
     private redisPort = parseInt(this.getOrExit('REDIS_PORT'));
     private redisHost = this.getOrExit('REDIS_HOST');
-    private redisUrl = this.getOrExit('REDIS_URL');
-    private redisUser = this.getOrExit('REDIS_USER');
-    private redisPassword = this.getOrExit('REDIS_PASSWORD');
+    private redisUrl = process.env.REDIS_URL;
+    private redisUser = process.env.REDIS_USER;
+    private redisPassword = process.env.REDIS_PASSWORD;
     private sessionSecret = this.getOrExit('SESSION_SECRET');
     private sessionSecure = this.getOrDefault('SESSION_SECURE', 'true') !== 'false';
 
