@@ -102,19 +102,19 @@ io.on(CONNECTION, async (socket) => {
     if (socket.request.session.user?.discName === undefined) {
 
         switch(activePlayers.size) {
-            case 1:
+            case 0:
                 socket.request.session.user = { discName: "Uriah#6969", discID: '', discAvatar: null, bearerToken: '1234'};
                 break;
-            case 2:
+            case 1:
                 socket.request.session.user = { discName: "Don Hector#3191", discID: '', discAvatar: null, bearerToken: '1234'};
                 break;
-            case 3:
+            case 2:
                 socket.request.session.user = { discName: "Deejay#0076", discID: '', discAvatar: null, bearerToken: '1234'};
                 break;
-            case 4:
+            case 3:
                 socket.request.session.user = { discName: "bugbytes#0817", discID: '', discAvatar: null, bearerToken: '1234'};
                 break;
-            case 5:
+            case 4:
                 socket.request.session.user = { discName: "Healthycheekums#3639", discID: '', discAvatar: null, bearerToken: '1234'};
                 break;
         }
@@ -130,7 +130,7 @@ io.on(CONNECTION, async (socket) => {
     activePlayers.set(socket.request.session.user.discName, userTest);
     const boardId: string | undefined = await findGame(socket, activePlayers);
     console.log(boardId);
-    *** END OF TEST BLOCK */
+    //*** END OF TEST BLOCK */
 
     const userConnState: UserConnectivityStatus | null = await isUserInGame(socket);
 
